@@ -1,10 +1,11 @@
+
 import type { Metadata } from 'next';
 import './globals.css';
 import { Toaster } from "@/components/ui/toaster"; // For AI pitch generator notifications
 
 export const metadata: Metadata = {
-  title: 'Persona - Personal Portfolio',
-  description: 'A personal portfolio website.',
+  title: 'Essilfie Albert - Personal Portfolio',
+  description: 'Personal portfolio of Essilfie Albert, a Computer Science and Engineering student specializing in UI/UX, AI, and Robotics.',
 };
 
 export default function RootLayout({

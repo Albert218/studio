@@ -1,3 +1,4 @@
+
 // src/components/sections/hero-section.tsx
 import Image from 'next/image';
 import Link from 'next/link';
@@ -6,7 +7,7 @@ import { Badge } from '@/components/ui/badge';
 import { Github, Linkedin, Mail, ArrowDown } from 'lucide-react';
 
 export default function HeroSection() {
-  const skills = ['Next.js', 'React', 'TypeScript', 'Tailwind CSS', 'Node.js', 'Firebase', 'GenAI'];
+  const skills = ['Software Eng.', 'UI/UX Design', 'AI/ML', 'Robotics', 'IoT', 'Assistive Tech', 'HCI'];
 
   return (
     <section id="home" className="min-h-[calc(100vh-4rem)] flex items-center bg-secondary/30 py-16 md:py-24 relative">
@@ -15,20 +16,20 @@ export default function HeroSection() {
           <div className="relative w-32 h-32 md:w-40 md:h-40 mx-auto mb-6 rounded-full overflow-hidden shadow-lg border-4 border-primary">
             <Image
               src="https://placehold.co/200x200.png"
-              alt="Your Name"
+              alt="Essilfie Albert"
               layout="fill"
               objectFit="cover"
               data-ai-hint="professional portrait"
             />
           </div>
           <h1 className="text-4xl sm:text-5xl md:text-6xl font-headline font-bold text-primary mb-4">
-            Jane Doe
+            Essilfie Albert
           </h1>
           <p className="text-xl md:text-2xl font-headline text-foreground/80 mb-6">
-            Full-Stack Developer & AI Enthusiast
+            BSc. Comp Sci & Eng. Student | UI/UX | AI & Robotics
           </p>
           <p className="text-lg text-muted-foreground mb-8 max-w-2xl mx-auto">
-            Passionate about building innovative web applications and exploring the potential of Generative AI. Turning complex problems into elegant solutions.
+            Aspiring Computer Science and Engineering graduate from the University of Mines and Technology, Ghana (Expected Nov. 2024). Passionate about Robotics, IoT, Assistive Technologies, HCI, and Machine Learning. Experienced in UI/UX design and developing innovative solutions.
           </p>
           <div className="mb-8">
             <h3 className="text-sm font-semibold text-muted-foreground uppercase tracking-wider mb-3">Key Skills</h3>
@@ -49,13 +50,13 @@ export default function HeroSection() {
             </Button>
           </div>
           <div className="flex justify-center space-x-6">
-            <Link href="https://github.com" target="_blank" rel="noopener noreferrer" aria-label="GitHub Profile">
+            <Link href="https://github.com/Albert218" target="_blank" rel="noopener noreferrer" aria-label="GitHub Profile">
               <Github className="h-7 w-7 text-muted-foreground hover:text-primary smooth-transition" />
             </Link>
             <Link href="https://linkedin.com" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn Profile">
               <Linkedin className="h-7 w-7 text-muted-foreground hover:text-primary smooth-transition" />
             </Link>
-            <Link href="mailto:jane.doe@example.com" aria-label="Email Jane Doe">
+            <Link href="mailto:essilfiealbert71@gmail.com" aria-label="Email Essilfie Albert">
               <Mail className="h-7 w-7 text-muted-foreground hover:text-primary smooth-transition" />
             </Link>
           </div>

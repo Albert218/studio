@@ -1,3 +1,4 @@
+
 // src/components/layout/navbar.tsx
 "use client";
 
@@ -22,7 +23,7 @@ export default function Navbar() {
     <header className="sticky top-0 z-50 w-full border-b border-border/40 bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
       <div className="container flex h-16 max-w-screen-2xl items-center justify-between px-4 sm:px-6 lg:px-8">
         <Link href="#home" className="text-2xl font-headline font-bold text-primary hover:opacity-80 smooth-transition">
-          Persona
+          Essilfie Albert
         </Link>
 
         {/* Desktop Navigation */}
@@ -37,7 +38,7 @@ export default function Navbar() {
             </Link>
           ))}
           <div className="flex items-center space-x-3">
-            <Link href="https://github.com" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
+            <Link href="https://github.com/Albert218" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
               <Button variant="ghost" size="icon" className="text-foreground/70 hover:text-primary">
                 <Github className="h-5 w-5" />
               </Button>
@@ -62,7 +63,7 @@ export default function Navbar() {
             <SheetContent side="right" className="w-[280px] p-6">
               <div className="mb-6 flex justify-between items-center">
                  <Link href="#home" className="text-2xl font-headline font-bold text-primary" onClick={() => setIsMobileMenuOpen(false)}>
-                    Persona
+                    Essilfie Albert
                   </Link>
                 <SheetClose asChild>
                    <Button variant="ghost" size="icon">
@@ -86,7 +87,7 @@ export default function Navbar() {
                 ))}
               </nav>
               <div className="mt-8 flex items-center space-x-4">
-                <Link href="https://github.com" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
+                <Link href="https://github.com/Albert218" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
                   <Button variant="outline" size="icon" className="text-foreground/70 hover:text-primary border-border hover:border-primary">
                     <Github className="h-5 w-5" />
                   </Button>

@@ -1,3 +1,4 @@
+
 // src/components/sections/projects-section.tsx
 import Image from 'next/image';
 import Link from 'next/link';
@@ -8,31 +9,31 @@ import { ExternalLink, Github } from 'lucide-react';
 
 const projects = [
   {
-    title: 'E-commerce Platform',
-    description: 'A full-featured e-commerce platform with Next.js, Stripe integration, and advanced product management.',
+    title: 'Farmlynco Mobile App',
+    description: 'Online marketplace for farmers, featuring IoT weather station integration and an AI "Crop Doctor" for disease diagnosis. Aimed at linking local farmers to consumers directly.',
     image: 'https://placehold.co/600x400.png',
-    imageHint: 'web application interface',
-    tags: ['Next.js', 'React', 'Stripe', 'Tailwind CSS'],
-    liveLink: '#',
-    githubLink: '#',
+    imageHint: 'agricultural technology app',
+    tags: ['Mobile Development', 'IoT', 'AI', 'Agriculture Tech', 'Marketplace'],
+    liveLink: '#', // Placeholder
+    githubLink: '#', // Placeholder
   },
   {
-    title: 'AI Powered Blog Generator',
-    description: 'A SaaS application that uses generative AI to create blog posts based on user prompts and keywords.',
+    title: 'Driver Drowsiness & Alcohol Detection',
+    description: "System using facial landmarks and an MQ3 sensor to assess driver drowsiness and alcohol levels, triggering alerts. Designed with a revenue generation model.",
     image: 'https://placehold.co/600x400.png',
-    imageHint: 'ai tool dashboard',
-    tags: ['Python', 'FastAPI', 'OpenAI API', 'React'],
-    liveLink: '#',
-    githubLink: '#',
+    imageHint: 'driver safety technology',
+    tags: ['Computer Vision', 'Sensors', 'AI', 'Embedded Systems', 'Safety Tech'],
+    liveLink: '#', // Placeholder
+    githubLink: '#', // Placeholder
   },
   {
-    title: 'Task Management App',
-    description: 'A collaborative task management tool with real-time updates, built using Firebase and React.',
+    title: 'IoT Emergency Detection System',
+    description: 'Real-time fire and gas leak detection using IoT, with integrated SMS/phone call alerts and a user-friendly mobile app with voice command functionality for accessibility.',
     image: 'https://placehold.co/600x400.png',
-    imageHint: 'mobile app screen',
-    tags: ['React', 'Firebase', 'Material UI'],
-    liveLink: '#',
-    githubLink: '#',
+    imageHint: 'iot emergency system',
+    tags: ['IoT', 'Emergency System', 'Mobile App', 'Accessibility', 'Sensors'],
+    liveLink: '#', // Placeholder
+    githubLink: '#', // Placeholder
   },
 ];
 

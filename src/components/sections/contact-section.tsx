@@ -1,3 +1,4 @@
+
 // src/components/sections/contact-section.tsx
 "use client";
 
@@ -123,8 +124,8 @@ export default function ContactSection() {
               <Mail className="h-6 w-6 text-accent mt-1" />
               <div>
                 <h4 className="font-semibold text-foreground">Email</h4>
-                <a href="mailto:jane.doe@example.com" className="text-muted-foreground hover:text-primary smooth-transition">
-                  jane.doe@example.com
+                <a href="mailto:essilfiealbert71@gmail.com" className="text-muted-foreground hover:text-primary smooth-transition">
+                  essilfiealbert71@gmail.com
                 </a>
               </div>
             </div>
@@ -132,8 +133,8 @@ export default function ContactSection() {
               <Phone className="h-6 w-6 text-accent mt-1" />
               <div>
                 <h4 className="font-semibold text-foreground">Phone</h4>
-                <a href="tel:+1234567890" className="text-muted-foreground hover:text-primary smooth-transition">
-                  +1 (234) 567-890
+                <a href="tel:+233542370880" className="text-muted-foreground hover:text-primary smooth-transition">
+                  +233 54 237 0880
                 </a>
               </div>
             </div>
@@ -141,7 +142,7 @@ export default function ContactSection() {
               <MapPin className="h-6 w-6 text-accent mt-1" />
               <div>
                 <h4 className="font-semibold text-foreground">Location</h4>
-                <p className="text-muted-foreground">San Francisco, CA (Remote-friendly)</p>
+                <p className="text-muted-foreground">Takoradi, Ghana (Remote-friendly)</p>
               </div>
             </div>
           </div>

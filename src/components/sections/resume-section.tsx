@@ -1,3 +1,4 @@
+
 // src/components/sections/resume-section.tsx
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '@/components/ui/accordion';
 import { Button } from '@/components/ui/button';
@@ -5,39 +6,23 @@ import { Download, Briefcase, GraduationCap } from 'lucide-react';
 
 const workExperience = [
   {
-    role: 'Senior Software Engineer',
-    company: 'Tech Solutions Inc.',
-    period: '2021 - Present',
+    role: 'UI/UX Designer Intern',
+    company: 'Project A.N.D',
+    period: 'June 2022 - August 2022',
     description: [
-      'Led development of key features for a flagship SaaS product, resulting in a 20% increase in user engagement.',
-      'Mentored junior developers and conducted code reviews to maintain high code quality standards.',
-      'Collaborated with cross-functional teams to define project requirements and deliverables.',
-    ],
-  },
-  {
-    role: 'Software Developer',
-    company: 'Innovatech Ltd.',
-    period: '2019 - 2021',
-    description: [
-      'Developed and maintained web applications using React, Node.js, and PostgreSQL.',
-      'Participated in the full software development lifecycle, from design to deployment.',
-      'Contributed to improving application performance and scalability.',
+      'Conducted user research, created personas, and designed user flows to optimize digital product experiences.',
+      'Developed visually appealing layouts, color schemes, and prototypes for responsive and accessible UIs.',
+      'Conducted usability tests, ensured accessibility compliance, and iteratively improved designs based on user feedback.',
     ],
   },
 ];
 
 const education = [
   {
-    degree: 'Master of Science in Computer Science',
-    institution: 'University of Advanced Technology',
-    period: '2017 - 2019',
-    description: 'Focused on machine learning and distributed systems. Thesis on "Scalable AI Architectures".',
-  },
-  {
-    degree: 'Bachelor of Science in Software Engineering',
-    institution: 'State University',
-    period: '2013 - 2017',
-    description: 'Graduated with honors. Active member of the coding club and hackathon participant.',
+    degree: 'BSc. Computer Science and Engineering (First Class Honours)',
+    institution: 'University of Mines and Technology, Ghana',
+    period: '2020 - Nov. 2024 (Expected)',
+    description: 'Undergraduate Capstone Project: Smart Navigation Device for the visually impaired. Relevant coursework: Data Structures & Algorithms, Software Engineering, AI, HCI, Embedded Systems, Database Management.',
   },
 ];
 
@@ -55,7 +40,7 @@ export default function ResumeSection() {
         <div className="text-center mb-12">
           <Button asChild size="lg" className="bg-accent hover:bg-accent/90 text-accent-foreground">
             {/* Placeholder link for resume download */}
-            <a href="/placeholder-resume.pdf" download="JaneDoe-Resume.pdf">
+            <a href="/placeholder-resume.pdf" download="EssilfieAlbert-Resume.pdf">
               <Download className="mr-2 h-5 w-5" />
               Download Resume (PDF)
             </a>
