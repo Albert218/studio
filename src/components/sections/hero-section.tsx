@@ -1,4 +1,3 @@
-
 // src/components/sections/hero-section.tsx
 import Image from 'next/image';
 import Link from 'next/link';
@@ -7,7 +6,7 @@ import { Badge } from '@/components/ui/badge';
 import { Github, Linkedin, Mail, ArrowDown } from 'lucide-react';
 
 export default function HeroSection() {
-  const skills = ['Software Eng.', 'UI/UX Design', 'AI/ML', 'Robotics', 'IoT', 'Assistive Tech', 'HCI'];
+  const skills = ['Software Eng.', 'UI/UX (Figma)', 'AI/ML', 'Robotics', 'Flutter Dev', 'Python', 'Java', 'C++', 'Graphic Design (Photoshop)', 'IoT', 'Assistive Tech'];
 
   return (
     <section id="home" className="min-h-[calc(100vh-4rem)] flex items-center bg-secondary/30 py-16 md:py-24 relative">
