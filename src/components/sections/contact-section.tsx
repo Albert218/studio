@@ -3,15 +3,15 @@
 
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useForm, type SubmitHandler } from "react-hook-form";
-import { z } from "zod";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Form, FormControl, FormField, FormItem, FormLabel, FormMessage } from "@/components/ui/form";
-import { useToast } from "@/hooks/use-toast"; // Corrected import path
+import { useToast } from "@/hooks/use-toast";
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/components/ui/card";
 import { Mail, Phone, MapPin } from "lucide-react";
-import { submitContactForm, type ContactFormValues, contactFormSchema } from "@/app/actions/contact-actions";
+import { submitContactForm } from "@/app/actions/contact-actions";
+import { contactFormSchema, type ContactFormValues } from "@/lib/schemas/contact-schema";
 
 
 export default function ContactSection() {
