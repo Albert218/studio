@@ -14,7 +14,7 @@ export default function HeroSection() {
         <div className="max-w-3xl mx-auto">
           <div className="relative w-32 h-32 md:w-40 md:h-40 mx-auto mb-6 rounded-full overflow-hidden shadow-lg border-4 border-primary">
             <Image
-              src="/placeholder_images/1909587288/image.png"
+              src="/profile.png"
               alt="Essilfie Albert"
               layout="fill"
               objectFit="cover"
