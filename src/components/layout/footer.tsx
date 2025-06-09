@@ -19,7 +19,7 @@ export default function Footer() {
               <Github className="h-5 w-5" />
             </Button>
           </Link>
-          <Link href="https://linkedin.com" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
+          <Link href="https://www.linkedin.com/in/albert-essilfie-054237080l/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
             <Button variant="ghost" size="icon" className="text-muted-foreground hover:text-primary">
               <Linkedin className="h-5 w-5" />
             </Button>

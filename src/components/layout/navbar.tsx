@@ -43,7 +43,7 @@ export default function Navbar() {
                 <Github className="h-5 w-5" />
               </Button>
             </Link>
-            <Link href="https://linkedin.com" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
+            <Link href="https://www.linkedin.com/in/albert-essilfie-054237080l/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
               <Button variant="ghost" size="icon" className="text-foreground/70 hover:text-primary">
                 <Linkedin className="h-5 w-5" />
               </Button>
@@ -92,7 +92,7 @@ export default function Navbar() {
                     <Github className="h-5 w-5" />
                   </Button>
                 </Link>
-                <Link href="https://linkedin.com" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
+                <Link href="https://www.linkedin.com/in/albert-essilfie-054237080l/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
                   <Button variant="outline" size="icon" className="text-foreground/70 hover:text-primary border-border hover:border-primary">
                     <Linkedin className="h-5 w-5" />
                   </Button>
