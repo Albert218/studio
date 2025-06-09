@@ -14,11 +14,10 @@ export default function HeroSection() {
         <div className="max-w-3xl mx-auto">
           <div className="relative w-32 h-32 md:w-40 md:h-40 mx-auto mb-6 rounded-full overflow-hidden shadow-lg border-4 border-primary">
             <Image
-              src="https://placehold.co/200x200.png"
+              src="/placeholder_images/1909587288/image.png"
               alt="Essilfie Albert"
               layout="fill"
               objectFit="cover"
-              data-ai-hint="professional portrait"
             />
           </div>
           <h1 className="text-4xl sm:text-5xl md:text-6xl font-headline font-bold text-primary mb-4">
