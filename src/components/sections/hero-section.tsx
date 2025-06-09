@@ -29,7 +29,7 @@ export default function HeroSection() {
         <div className="max-w-3xl mx-auto">
           <div className="relative w-32 h-32 md:w-40 md:h-40 mx-auto mb-6 rounded-full overflow-hidden shadow-lg border-4 border-primary">
             <Image
-              src="/images/Albert_Pic.jpg"
+              src="/Albert_Pic.jpg"
               alt="Essilfie Albert"
               fill
               sizes="(max-width: 768px) 8rem, 10rem"
@@ -104,7 +104,7 @@ export default function HeroSection() {
               <Github className="h-7 w-7 text-muted-foreground hover:text-primary smooth-transition" />
             </Link>
             <Link
-              href="https://linkedin.com"
+              href="https://www.linkedin.com/in/albert-essilfie-054237080l/"
               target="_blank"
               rel="noopener noreferrer"
               aria-label="LinkedIn Profile"
