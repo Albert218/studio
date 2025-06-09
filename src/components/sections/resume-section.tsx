@@ -1,7 +1,7 @@
 // src/components/sections/resume-section.tsx
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '@/components/ui/accordion';
 import { Button } from '@/components/ui/button';
-import { Download, Briefcase, GraduationCap, Star, FileBadge2, HeartHandshake } from 'lucide-react';
+import { Download, Briefcase, GraduationCap, Star, FileBadge2, HeartHandshake, Users, Award, BookOpen, Activity } from 'lucide-react';
 
 const workExperience = [
   {
@@ -71,14 +71,111 @@ const volunteeringExperience = [
     ],
   },
   {
-    organization: 'Agri-IoT',
-    role: 'Contributor/Participant',
-    period: 'August 2023',
+    organization: 'Agri-IoT Project',
+    role: 'Contributor/Volunteer',
+    period: 'Ongoing',
     description: [
-      'Involved in Agri-IoT initiatives.',
+      'Contributed to the Agri-IoT project by implementing Arduino concepts, promoting innovation in agricultural technology as a volunteer.',
+    ],
+  },
+  {
+    organization: 'Aaenics - UMaT',
+    role: 'Robotics and Coding Trainer',
+    period: 'April 2023',
+    description: [
+      'Trained 100 pupils from the Tarkwa Municipality in robotics and coding, fostering STEM education and digital literacy within the community.',
+    ],
+  },
+  {
+    organization: 'Festive Kids BootCamp',
+    role: 'Robotics and Programming Trainer',
+    period: 'September 2023',
+    description: [
+      'Trained 300 pupils from the Cape Coast Municipality in robotics and programming, fostering STEM education and digital literacy within the community.',
+    ],
+  },
+  {
+    organization: 'Inclusive Tech Group (DI-Hack)',
+    role: 'Mentor & Graphic Designer',
+    period: 'December 2022',
+    description: [
+      'Served as a mentor and graphic designer for the 2022 DI-Hack competition, providing guidance and support to participants in fostering innovation for accessibility.',
     ],
   },
 ];
+
+const coCurricularActivitiesData = [
+  {
+    activity: 'Robotics Club',
+    role: 'Organizer/Tutor',
+    period: 'August 2021',
+    description: ['Organized free robotics tutorials for children of Knowledge of Heaven Academy.'],
+  },
+  {
+    activity: 'Tech Prodigies',
+    role: 'Micro-controller Lead',
+    period: 'May 2021',
+    description: ['Selection of the required processor for any project.'],
+  },
+  {
+    activity: 'Church Technical Team',
+    role: 'Member',
+    period: 'Ongoing',
+    description: [],
+  },
+  {
+    activity: 'Veivag Swimming Club',
+    role: 'Member',
+    period: 'Ongoing',
+    description: [],
+  },
+  {
+    activity: 'Community Football Team',
+    role: 'Goal Keeper',
+    period: 'Ongoing',
+    description: [],
+  },
+];
+
+const leadershipExperienceData = [
+  {
+    role: "President, St. Mary's Old Boys Association - UMaT",
+    organization: 'SMOBA - UMaT',
+    period: 'Sept 2023 - 2024',
+    description: ['Showcasing strong leadership, training, and mentorship.'],
+  },
+  {
+    role: 'Financial Secretary, Aaenics UMaT Robotics Club',
+    organization: 'Aaenics UMaT Robotics Club',
+    period: 'Jan 2023 - 2024',
+    description: ["Created and managed the club's budget, ensuring expenses align with financial goals."],
+  },
+  {
+    role: 'Organizing Secretary, Association of Computer Science and Engineering Student',
+    organization: 'Association of Computer Science and Engineering Students, UMaT',
+    period: 'Oct 2022 - 2023',
+    description: [
+      'Planned and coordinated club events, meetings, and activities, ensuring they run smoothly.',
+      "Handled communication with members, managed event logistics, and may assist with scheduling and venue arrangements to facilitate the club's operations.",
+    ],
+  },
+];
+
+const publicationsData = [
+  {
+    title: "In-depth IoT-based Home Automation System for Ghana's Context",
+    authors: 'Mohammed Y. Umaru, Emmanuel Effah, Minta Frederick, Essilfie Albert',
+    journal: 'International Journal of Research and Scientific Innovation (IJRSI)',
+    year: '2023',
+  },
+  {
+    title: 'IoT-based Weather Monitoring System for Ghanaian Farmers',
+    authors: 'Abdul-Majeed Osman, Albert Essilfie, George Essah Yaw Okai, Minta Frederick Kwame',
+    journal: 'International Journal of Computer Application (IJCA)',
+    year: '2024',
+  },
+];
+
 
 export default function ResumeSection() {
   return (
@@ -212,6 +309,84 @@ export default function ResumeSection() {
                         <li key={i}>{desc}</li>
                       ))}
                     </ul>
+                  </AccordionContent>
+                </AccordionItem>
+              ))}
+            </Accordion>
+          </div>
+
+          <div>
+            <h3 className="flex items-center text-2xl font-headline font-semibold text-primary mb-6">
+              <Activity className="mr-3 h-6 w-6 text-accent" />
+              Co-curricular Activities
+            </h3>
+            <Accordion type="single" collapsible className="w-full">
+              {coCurricularActivitiesData.map((act, index) => (
+                <AccordionItem key={`co-curr-${index}`} value={`co-curr-item-${index}`} className="bg-card shadow-sm rounded-lg mb-4">
+                  <AccordionTrigger className="p-4 sm:p-6 text-left hover:no-underline">
+                    <div className="flex-1">
+                      <h4 className="text-lg font-headline font-medium text-foreground">{act.activity}</h4>
+                      {act.role && <p className="text-sm text-accent">{act.role}</p>}
+                      <p className="text-xs text-muted-foreground mt-1">{act.period}</p>
+                    </div>
+                  </AccordionTrigger>
+                  {act.description && act.description.length > 0 && (
+                    <AccordionContent className="p-4 sm:p-6 pt-0">
+                      <ul className="list-disc list-inside space-y-1 text-sm text-muted-foreground">
+                        {act.description.map((desc, i) => (
+                          <li key={i}>{desc}</li>
+                        ))}
+                      </ul>
+                    </AccordionContent>
+                  )}
+                </AccordionItem>
+              ))}
+            </Accordion>
+          </div>
+
+          <div>
+            <h3 className="flex items-center text-2xl font-headline font-semibold text-primary mb-6">
+              <Award className="mr-3 h-6 w-6 text-accent" />
+              Leadership Experience
+            </h3>
+            <Accordion type="single" collapsible className="w-full">
+              {leadershipExperienceData.map((lead, index) => (
+                <AccordionItem key={`lead-${index}`} value={`lead-item-${index}`} className="bg-card shadow-sm rounded-lg mb-4">
+                  <AccordionTrigger className="p-4 sm:p-6 text-left hover:no-underline">
+                    <div className="flex-1">
+                      <h4 className="text-lg font-headline font-medium text-foreground">{lead.role}</h4>
+                      <p className="text-sm text-accent">{lead.organization}</p>
+                      <p className="text-xs text-muted-foreground mt-1">{lead.period}</p>
+                    </div>
+                  </AccordionTrigger>
+                  <AccordionContent className="p-4 sm:p-6 pt-0">
+                    <ul className="list-disc list-inside space-y-1 text-sm text-muted-foreground">
+                      {lead.description.map((desc, i) => (
+                        <li key={i}>{desc}</li>
+                      ))}
+                    </ul>
+                  </AccordionContent>
+                </AccordionItem>
+              ))}
+            </Accordion>
+          </div>
+
+          <div>
+            <h3 className="flex items-center text-2xl font-headline font-semibold text-primary mb-6">
+              <BookOpen className="mr-3 h-6 w-6 text-accent" />
+              Publications
+            </h3>
+            <Accordion type="single" collapsible className="w-full">
+              {publicationsData.map((pub, index) => (
+                <AccordionItem key={`pub-${index}`} value={`pub-item-${index}`} className="bg-card shadow-sm rounded-lg mb-4">
+                  <AccordionTrigger className="p-4 sm:p-6 text-left hover:no-underline">
+                    <div className="flex-1">
+                      <h4 className="text-lg font-headline font-medium text-foreground">{pub.title}</h4>
+                      <p className="text-sm text-accent mt-1">{pub.journal}, {pub.year}</p>
+                    </div>
+                  </AccordionTrigger>
+                   <AccordionContent className="p-4 sm:p-6 pt-0">
+                    <p className="text-sm text-muted-foreground italic">Authors: {pub.authors}</p>
                   </AccordionContent>
                 </AccordionItem>
               ))}
