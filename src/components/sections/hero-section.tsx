@@ -27,14 +27,14 @@ export default function HeroSection() {
     >
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 text-center">
         <div className="max-w-3xl mx-auto">
-          <div className="relative w-32 h-32 md:w-40 md:h-40 mx-auto mb-6 rounded-full overflow-hidden shadow-lg border-4 border-primary">
+          <div className="relative w-40 h-40 md:w-40 md:h-40 mx-auto mb-6 rounded-full overflow-hidden shadow-lg border-4 border-primary">
             <Image
-              src="/Albert_Pic.jpg"
+              src="/images/Albert_Pic.jpg"
               alt="Essilfie Albert"
               fill
               style={{ objectFit: 'cover' }}
               priority
-              sizes="(max-width: 768px) 8rem, 10rem"
+              sizes="(max-width: 868px) 10rem, 10rem"
             />
           </div>
           <h1 className="text-4xl sm:text-5xl md:text-6xl font-headline font-bold text-primary mb-4">

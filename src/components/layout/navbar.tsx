@@ -3,7 +3,7 @@
 "use client";
 
 import Link from 'next/link';
-import { Menu, X, Briefcase, Home, Mail, User, Zap, Github, Linkedin } from 'lucide-react';
+import { Menu, X, Briefcase, Home, Mail, User, Palette, Github, Linkedin } from 'lucide-react'; // Removed Zap, Added Palette
 import { useState } from 'react';
 import { Button } from '@/components/ui/button';
 import { Sheet, SheetContent, SheetTrigger, SheetClose } from '@/components/ui/sheet';
@@ -12,7 +12,7 @@ const navLinks = [
   { href: '#home', label: 'Home', icon: Home },
   { href: '#projects', label: 'Projects', icon: Briefcase },
   { href: '#resume', label: 'Resume', icon: User },
-  { href: '#pitch-ai', label: 'Pitch AI', icon: Zap },
+  // { href: '#pitch-ai', label: 'Pitch AI', icon: Zap }, // Removed Pitch AI
   { href: '#contact', label: 'Contact', icon: Mail },
 ];
 
@@ -46,6 +46,11 @@ export default function Navbar() {
             <Link href="https://www.linkedin.com/in/albert-essilfie-054237080l/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
               <Button variant="ghost" size="icon" className="text-foreground/70 hover:text-primary">
                 <Linkedin className="h-5 w-5" />
+              </Button>
+            </Link>
+            <Link href="https://www.behance.net/yourusername" target="_blank" rel="noopener noreferrer" aria-label="Behance">
+              <Button variant="ghost" size="icon" className="text-foreground/70 hover:text-primary">
+                <Palette className="h-5 w-5" />
               </Button>
             </Link>
           </div>
@@ -95,6 +100,11 @@ export default function Navbar() {
                 <Link href="https://www.linkedin.com/in/albert-essilfie-054237080l/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
                   <Button variant="outline" size="icon" className="text-foreground/70 hover:text-primary border-border hover:border-primary">
                     <Linkedin className="h-5 w-5" />
+                  </Button>
+                </Link>
+                <Link href="https://www.behance.net/yourusername" target="_blank" rel="noopener noreferrer" aria-label="Behance">
+                  <Button variant="outline" size="icon" className="text-foreground/70 hover:text-primary border-border hover:border-primary">
+                    <Palette className="h-5 w-5" />
                   </Button>
                 </Link>
               </div>
