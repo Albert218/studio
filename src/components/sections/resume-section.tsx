@@ -5,6 +5,7 @@ import Link from 'next/link';
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '@/components/ui/accordion';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardFooter, CardHeader, CardTitle } from '@/components/ui/card';
+import { Carousel, CarouselContent, CarouselItem, CarouselPrevious, CarouselNext } from '@/components/ui/carousel';
 import { Download, Briefcase, GraduationCap, Star, FileBadge2, HeartHandshake, Users, Award, BookOpen, Activity, Palette, ExternalLink } from 'lucide-react';
 
 const workExperience = [
@@ -65,7 +66,7 @@ const certifications = [
 ];
 
 const volunteeringExperience = [
-  {
+   {
     organization: 'Firm Health Ghana Foundation',
     role: 'Graphic Designer & Data Collector',
     period: 'September 2024',
@@ -204,6 +205,12 @@ const sampleDesignsData = [
     imageUrl: 'https://placehold.co/400x300.png',
     imageHint: 'dashboard ui analytics',
     description: 'Data visualization dashboard interface.'
+  },
+  {
+    title: 'Flyer Design',
+    imageUrl: 'https://placehold.co/400x300.png',
+    imageHint: 'flyer design event',
+    description: 'Promotional flyer for an event.'
   },
 ];
 
@@ -433,28 +440,42 @@ export default function ResumeSection() {
                 A few examples of my design work. More available on Behance.
               </p>
             </div>
-            <div className="flex overflow-x-auto space-x-6 pb-4 -mb-4 snap-x snap-mandatory">
-              {sampleDesignsData.map((design, index) => (
-                <Card key={index} className="min-w-[300px] sm:min-w-[350px] flex-shrink-0 snap-center overflow-hidden shadow-lg hover:shadow-xl smooth-transition">
-                  <CardHeader className="p-0">
-                    <div className="aspect-[4/3] relative w-full">
-                      <Image
-                        src={design.imageUrl}
-                        alt={design.title}
-                        fill
-                        style={{ objectFit: 'cover' }}
-                        sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-                        data-ai-hint={design.imageHint}
-                      />
+            <Carousel
+              opts={{
+                align: "start",
+                loop: true,
+              }}
+              className="w-full max-w-xs sm:max-w-md md:max-w-lg lg:max-w-xl xl:max-w-2xl mx-auto"
+            >
+              <CarouselContent>
+                {sampleDesignsData.map((design, index) => (
+                  <CarouselItem key={index} className="md:basis-1/2 lg:basis-1/3">
+                    <div className="p-1">
+                      <Card className="overflow-hidden shadow-lg hover:shadow-xl smooth-transition">
+                        <CardHeader className="p-0">
+                          <div className="aspect-[4/3] relative w-full">
+                            <Image
+                              src={design.imageUrl}
+                              alt={design.title}
+                              fill
+                              style={{ objectFit: 'cover' }}
+                              sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                              data-ai-hint={design.imageHint}
+                            />
+                          </div>
+                        </CardHeader>
+                        <CardContent className="p-4">
+                          <CardTitle className="text-lg font-headline mb-1 text-foreground">{design.title}</CardTitle>
+                          <p className="text-sm text-muted-foreground h-16 overflow-hidden">{design.description}</p>
+                        </CardContent>
+                      </Card>
                     </div>
-                  </CardHeader>
-                  <CardContent className="p-4">
-                    <CardTitle className="text-lg font-headline mb-1 text-foreground">{design.title}</CardTitle>
-                    <p className="text-sm text-muted-foreground">{design.description}</p>
-                  </CardContent>
-                </Card>
-              ))}
-            </div>
+                  </CarouselItem>
+                ))}
+              </CarouselContent>
+              <CarouselPrevious />
+              <CarouselNext />
+            </Carousel>
             <div className="text-center mt-10">
               <Button asChild size="lg" variant="outline" className="border-primary text-primary hover:bg-primary/10">
                 <Link href="https://www.behance.net/albertessilfie71" target="_blank" rel="noopener noreferrer">
@@ -470,3 +491,4 @@ export default function ResumeSection() {
     </section>
   );
 }
+
