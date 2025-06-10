@@ -3,7 +3,7 @@
 "use client";
 
 import Link from 'next/link';
-import { Menu, X, Briefcase, Home, Mail, User, Palette, Github, Linkedin } from 'lucide-react'; // Removed Zap, Added Palette
+import { Menu, X, Briefcase, Home, Mail, User, Palette, Github, Linkedin } from 'lucide-react';
 import { useState } from 'react';
 import { Button } from '@/components/ui/button';
 import { Sheet, SheetContent, SheetTrigger, SheetClose } from '@/components/ui/sheet';
@@ -12,7 +12,6 @@ const navLinks = [
   { href: '#home', label: 'Home', icon: Home },
   { href: '#projects', label: 'Projects', icon: Briefcase },
   { href: '#resume', label: 'Resume', icon: User },
-  // { href: '#pitch-ai', label: 'Pitch AI', icon: Zap }, // Removed Pitch AI
   { href: '#contact', label: 'Contact', icon: Mail },
 ];
 
@@ -48,7 +47,7 @@ export default function Navbar() {
                 <Linkedin className="h-5 w-5" />
               </Button>
             </Link>
-            <Link href="https://www.behance.net/yourusername" target="_blank" rel="noopener noreferrer" aria-label="Behance">
+            <Link href="https://www.behance.net/albertessilfie71" target="_blank" rel="noopener noreferrer" aria-label="Behance">
               <Button variant="ghost" size="icon" className="text-foreground/70 hover:text-primary">
                 <Palette className="h-5 w-5" />
               </Button>
@@ -102,7 +101,7 @@ export default function Navbar() {
                     <Linkedin className="h-5 w-5" />
                   </Button>
                 </Link>
-                <Link href="https://www.behance.net/yourusername" target="_blank" rel="noopener noreferrer" aria-label="Behance">
+                <Link href="https://www.behance.net/albertessilfie71" target="_blank" rel="noopener noreferrer" aria-label="Behance">
                   <Button variant="outline" size="icon" className="text-foreground/70 hover:text-primary border-border hover:border-primary">
                     <Palette className="h-5 w-5" />
                   </Button>

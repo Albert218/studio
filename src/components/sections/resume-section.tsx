@@ -1,7 +1,11 @@
+
 // src/components/sections/resume-section.tsx
+import Image from 'next/image';
+import Link from 'next/link';
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '@/components/ui/accordion';
 import { Button } from '@/components/ui/button';
-import { Download, Briefcase, GraduationCap, Star, FileBadge2, HeartHandshake, Users, Award, BookOpen, Activity } from 'lucide-react';
+import { Card, CardContent, CardFooter, CardHeader, CardTitle } from '@/components/ui/card';
+import { Download, Briefcase, GraduationCap, Star, FileBadge2, HeartHandshake, Users, Award, BookOpen, Activity, Palette, ExternalLink } from 'lucide-react';
 
 const workExperience = [
   {
@@ -176,6 +180,33 @@ const publicationsData = [
   },
 ];
 
+const sampleDesignsData = [
+  {
+    title: 'Mobile App UI',
+    imageUrl: 'https://placehold.co/400x300.png',
+    imageHint: 'mobile app ui',
+    description: 'User interface design for a modern mobile application.'
+  },
+  {
+    title: 'Branding & Logo',
+    imageUrl: 'https://placehold.co/400x300.png',
+    imageHint: 'branding logo',
+    description: 'Complete branding package and logo design for a startup.'
+  },
+  {
+    title: 'Website Design',
+    imageUrl: 'https://placehold.co/400x300.png',
+    imageHint: 'website design',
+    description: 'Responsive website design for a corporate client.'
+  },
+  {
+    title: 'Dashboard UI',
+    imageUrl: 'https://placehold.co/400x300.png',
+    imageHint: 'dashboard ui analytics',
+    description: 'Data visualization dashboard interface.'
+  },
+];
+
 
 export default function ResumeSection() {
   return (
@@ -190,7 +221,6 @@ export default function ResumeSection() {
 
         <div className="text-center mb-12">
           <Button asChild size="lg" className="bg-accent hover:bg-accent/90 text-accent-foreground">
-            {/* Placeholder link for resume download */}
             <a href="/cv/ESSILFIE ALBERT_CV.pdf" download="EssilfieAlbert-Resume.pdf">
               <Download className="mr-2 h-5 w-5" />
               Download Resume (PDF)
@@ -391,6 +421,48 @@ export default function ResumeSection() {
                 </AccordionItem>
               ))}
             </Accordion>
+          </div>
+
+          <div>
+            <h3 className="flex items-center text-2xl font-headline font-semibold text-primary mb-6">
+              <Palette className="mr-3 h-6 w-6 text-accent" />
+              Sample Designs
+            </h3>
+            <div className="mb-6">
+              <p className="text-md text-muted-foreground text-left">
+                A few examples of my design work. More available on Behance.
+              </p>
+            </div>
+            <div className="flex overflow-x-auto space-x-6 pb-4 -mb-4 snap-x snap-mandatory">
+              {sampleDesignsData.map((design, index) => (
+                <Card key={index} className="min-w-[300px] sm:min-w-[350px] flex-shrink-0 snap-center overflow-hidden shadow-lg hover:shadow-xl smooth-transition">
+                  <CardHeader className="p-0">
+                    <div className="aspect-[4/3] relative w-full">
+                      <Image
+                        src={design.imageUrl}
+                        alt={design.title}
+                        fill
+                        style={{ objectFit: 'cover' }}
+                        sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                        data-ai-hint={design.imageHint}
+                      />
+                    </div>
+                  </CardHeader>
+                  <CardContent className="p-4">
+                    <CardTitle className="text-lg font-headline mb-1 text-foreground">{design.title}</CardTitle>
+                    <p className="text-sm text-muted-foreground">{design.description}</p>
+                  </CardContent>
+                </Card>
+              ))}
+            </div>
+            <div className="text-center mt-10">
+              <Button asChild size="lg" variant="outline" className="border-primary text-primary hover:bg-primary/10">
+                <Link href="https://www.behance.net/albertessilfie71" target="_blank" rel="noopener noreferrer">
+                  <ExternalLink className="mr-2 h-5 w-5" />
+                  View More on Behance
+                </Link>
+              </Button>
+            </div>
           </div>
 
         </div>
