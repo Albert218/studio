@@ -32,9 +32,9 @@ export default function HeroSection() {
               src="/Albert_Pic.jpg"
               alt="Essilfie Albert"
               fill
-              sizes="(max-width: 768px) 8rem, 10rem"
               style={{ objectFit: 'cover' }}
               priority
+              sizes="(max-width: 768px) 8rem, 10rem"
             />
           </div>
           <h1 className="text-4xl sm:text-5xl md:text-6xl font-headline font-bold text-primary mb-4">

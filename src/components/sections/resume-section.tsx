@@ -191,7 +191,7 @@ export default function ResumeSection() {
         <div className="text-center mb-12">
           <Button asChild size="lg" className="bg-accent hover:bg-accent/90 text-accent-foreground">
             {/* Placeholder link for resume download */}
-            <a href="/placeholder-resume.pdf" download="EssilfieAlbert-Resume.pdf">
+            <a href="/cv/ESSILFIE ALBERT_CV.pdf" download="EssilfieAlbert-Resume.pdf">
               <Download className="mr-2 h-5 w-5" />
               Download Resume (PDF)
             </a>
