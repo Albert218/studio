@@ -2,6 +2,7 @@
 "use client"
 
 import * as React from "react"
+import useEmblaCarousel from "embla-carousel-react"; // Changed: Direct import
 import { ArrowLeft, ArrowRight } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { cn } from "@/lib/utils"
@@ -28,7 +29,7 @@ const Carousel = React.forwardRef<
   HTMLDivElement,
   React.HTMLAttributes<HTMLDivElement> & {
     orientation?: "horizontal" | "vertical"
-    opts?: unknown // Simplified: Embla's options type
+    opts?: any // Simplified: Embla's options type (kept as any for simplicity of original file)
     setApi?: (api: any) => void // Simplified: Embla's API type
   }
 >(
@@ -43,10 +44,12 @@ const Carousel = React.forwardRef<
     },
     ref
   ) => {
-    const [emblaRef, emblaApi] = React.useMemo(
-      () => (require("embla-carousel-react") as any).default(opts),
-      [opts]
-    )
+    const [emblaRef, emblaApi] = useEmblaCarousel( // Changed: Direct usage and applying orientation
+      {
+        ...opts,
+        axis: orientation === "horizontal" ? "x" : "y",
+      }
+    );
     const [canScrollPrev, setCanScrollPrev] = React.useState(false)
     const [canScrollNext, setCanScrollNext] = React.useState(false)
 
@@ -71,8 +74,11 @@ const Carousel = React.forwardRef<
       emblaApi.on("select", onSelect)
       if (setApi) setApi(emblaApi)
       return () => {
-        emblaApi.off("select", onSelect)
-        emblaApi.off("reInit", onSelect)
+        // Check if emblaApi has 'off' method before calling
+        if (emblaApi && typeof emblaApi.off === 'function') {
+          emblaApi.off("select", onSelect)
+          emblaApi.off("reInit", onSelect)
+        }
       }
     }, [emblaApi, onSelect, setApi])
 
