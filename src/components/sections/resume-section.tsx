@@ -445,7 +445,7 @@ export default function ResumeSection() {
                 align: "start",
                 loop: true,
               }}
-              className="w-full max-w-xs sm:max-w-md md:max-w-lg lg:max-w-xl xl:max-w-2xl mx-auto"
+              className="w-full"
             >
               <CarouselContent>
                 {sampleDesignsData.map((design, index) => (
