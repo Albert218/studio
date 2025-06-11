@@ -1,15 +1,15 @@
 // src/components/sections/resume-section.tsx
-"use client"; // Add this line
+"use client"; 
 
 import Image from 'next/image';
 import Link from 'next/link';
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '@/components/ui/accordion';
 import { Button } from '@/components/ui/button';
-import { Card, CardContent, CardFooter, CardHeader, CardTitle } from '@/components/ui/card';
+import { Card, CardContent, CardFooter, CardHeader, CardTitle, CardDescription } from '@/components/ui/card';
 import { Carousel, CarouselContent, CarouselItem } from '@/components/ui/carousel';
 import Autoplay from "embla-carousel-autoplay";
 import { Download, Briefcase, GraduationCap, Star, FileBadge2, HeartHandshake, Users, Award, BookOpen, Activity, Palette, ExternalLink } from 'lucide-react';
-import { useRef } from 'react'; // Import useRef
+import { useRef } from 'react'; 
 
 const workExperience = [
   {
@@ -189,31 +189,31 @@ const sampleDesignsData = [
     title: 'Mobile App UI',
     imageUrl: 'https://placehold.co/400x300.png',
     imageHint: 'mobile app ui',
-    description: 'User interface design for a modern mobile application.'
+    description: 'User interface design for a modern mobile application, focusing on intuitive navigation and clean aesthetics.'
   },
   {
     title: 'Branding & Logo',
     imageUrl: 'https://placehold.co/400x300.png',
     imageHint: 'branding logo',
-    description: 'Complete branding package and logo design for a startup.'
+    description: 'Complete branding package and logo design for a startup, aiming for a memorable and impactful visual identity.'
   },
   {
     title: 'Website Design',
     imageUrl: 'https://placehold.co/400x300.png',
     imageHint: 'website design',
-    description: 'Responsive website design for a corporate client.'
+    description: 'Responsive website design for a corporate client, prioritizing user experience and modern visual appeal.'
   },
   {
     title: 'Dashboard UI',
     imageUrl: 'https://placehold.co/400x300.png',
     imageHint: 'dashboard ui analytics',
-    description: 'Data visualization dashboard interface.'
+    description: 'Data visualization dashboard interface designed for clarity and actionable insights at a glance.'
   },
   {
     title: 'Flyer Design',
     imageUrl: 'https://placehold.co/400x300.png',
     imageHint: 'flyer design event',
-    description: 'Promotional flyer for an event.'
+    description: 'Promotional flyer for an event, crafted to be eye-catching and informative, driving engagement.'
   },
 ];
 
@@ -463,7 +463,7 @@ export default function ResumeSection() {
                 {sampleDesignsData.map((design, index) => (
                   <CarouselItem key={index} className="md:basis-1/2 lg:basis-1/3">
                     <div className="p-1">
-                      <Card className="overflow-hidden shadow-lg hover:shadow-xl smooth-transition">
+                      <Card className="flex flex-col overflow-hidden shadow-lg hover:shadow-xl smooth-transition">
                         <CardHeader className="p-0">
                           <div className="aspect-[4/3] relative w-full">
                             <Image
@@ -476,9 +476,9 @@ export default function ResumeSection() {
                             />
                           </div>
                         </CardHeader>
-                        <CardContent className="p-4">
-                          <CardTitle className="text-lg font-headline mb-1 text-foreground">{design.title}</CardTitle>
-                          <p className="text-sm text-muted-foreground h-16 overflow-hidden">{design.description}</p>
+                        <CardContent className="flex-grow p-6">
+                          <CardTitle className="text-xl font-headline mb-2 text-foreground">{design.title}</CardTitle>
+                          <p className="text-sm text-muted-foreground">{design.description}</p>
                         </CardContent>
                       </Card>
                     </div>
@@ -501,3 +501,4 @@ export default function ResumeSection() {
     </section>
   );
 }
+
