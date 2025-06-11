@@ -1,12 +1,13 @@
-
 // src/components/sections/resume-section.tsx
+"use client"; // Add this line
+
 import Image from 'next/image';
 import Link from 'next/link';
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '@/components/ui/accordion';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardFooter, CardHeader, CardTitle } from '@/components/ui/card';
-import { Carousel, CarouselContent, CarouselItem } from '@/components/ui/carousel'; // Removed CarouselPrevious, CarouselNext
-import Autoplay from "embla-carousel-autoplay"; // Added Autoplay plugin
+import { Carousel, CarouselContent, CarouselItem } from '@/components/ui/carousel';
+import Autoplay from "embla-carousel-autoplay";
 import { Download, Briefcase, GraduationCap, Star, FileBadge2, HeartHandshake, Users, Award, BookOpen, Activity, Palette, ExternalLink } from 'lucide-react';
 
 const workExperience = [
@@ -481,7 +482,6 @@ export default function ResumeSection() {
                   </CarouselItem>
                 ))}
               </CarouselContent>
-              {/* CarouselPrevious and CarouselNext removed */}
             </Carousel>
             <div className="text-center mt-10">
               <Button asChild size="lg" variant="outline" className="border-primary text-primary hover:bg-primary/10">

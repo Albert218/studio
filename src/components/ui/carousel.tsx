@@ -2,10 +2,13 @@
 "use client"
 
 import * as React from "react"
-import useEmblaCarousel, { type EmblaOptionsType, type EmblaPluginType } from "embla-carousel-react";
+import useEmblaCarousel, { type EmblaOptionsType, type EmblaPluginType, type EmblaCarouselType } from "embla-carousel-react";
 import { ArrowLeft, ArrowRight } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { cn } from "@/lib/utils"
+
+// Define and export CarouselApi type correctly
+export type CarouselApi = EmblaCarouselType | undefined;
 
 type CarouselContextProps = {
   orientation: "horizontal" | "vertical"
@@ -13,7 +16,7 @@ type CarouselContextProps = {
   scrollNext: () => void
   canScrollPrev: boolean
   canScrollNext: boolean
-  api: ReturnType<typeof useEmblaCarousel>[1]
+  api: CarouselApi
 }
 
 const CarouselContext = React.createContext<CarouselContextProps | null>(null)
@@ -31,7 +34,7 @@ const Carousel = React.forwardRef<
   React.HTMLAttributes<HTMLDivElement> & {
     orientation?: "horizontal" | "vertical"
     opts?: EmblaOptionsType
-    setApi?: (api: ReturnType<typeof useEmblaCarousel>[1]) => void
+    setApi?: (api: CarouselApi) => void
     plugins?: EmblaPluginType[]
   }
 >(
@@ -57,10 +60,10 @@ const Carousel = React.forwardRef<
     const [canScrollPrev, setCanScrollPrev] = React.useState(false)
     const [canScrollNext, setCanScrollNext] = React.useState(false)
 
-    const onSelect = React.useCallback((api: ReturnType<typeof useEmblaCarousel>[1]) => {
-      if (!api) return
-      setCanScrollPrev(api.canScrollPrev())
-      setCanScrollNext(api.canScrollNext())
+    const onSelect = React.useCallback((currentApi: CarouselApi) => {
+      if (!currentApi) return
+      setCanScrollPrev(currentApi.canScrollPrev())
+      setCanScrollNext(currentApi.canScrollNext())
     }, [])
 
     const scrollPrev = React.useCallback(() => {
@@ -79,8 +82,8 @@ const Carousel = React.forwardRef<
       if (setApi) setApi(emblaApi)
       return () => {
         if (emblaApi && typeof emblaApi.off === 'function') {
-          emblaApi.off("select", onSelect)
           emblaApi.off("reInit", onSelect)
+          emblaApi.off("select", onSelect)
         }
       }
     }, [emblaApi, onSelect, setApi])
@@ -226,7 +229,7 @@ export {
   CarouselItem,
   CarouselPrevious,
   CarouselNext,
-  type EmblaOptionsType as CarouselOptions, // Exporting options type
-  type EmblaPluginType as CarouselPlugin, // Exporting plugin type
-  type ReturnType<typeof useEmblaCarousel>[1] as CarouselApi, // Exporting API type
+  type EmblaOptionsType as CarouselOptions,
+  type EmblaPluginType as CarouselPlugin,
+  // CarouselApi is already exported via `export type CarouselApi = ...`
 }
