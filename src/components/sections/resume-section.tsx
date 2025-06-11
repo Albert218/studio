@@ -449,7 +449,7 @@ export default function ResumeSection() {
               }}
               plugins={[
                 Autoplay({
-                  delay: 4000,
+                  delay: 8000, // Changed from 4000 to 8000
                   stopOnInteraction: false,
                   stopOnMouseEnter: true,
                 }),
@@ -498,3 +498,4 @@ export default function ResumeSection() {
     </section>
   );
 }
+
