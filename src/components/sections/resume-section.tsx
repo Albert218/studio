@@ -5,7 +5,8 @@ import Link from 'next/link';
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '@/components/ui/accordion';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardFooter, CardHeader, CardTitle } from '@/components/ui/card';
-import { Carousel, CarouselContent, CarouselItem, CarouselPrevious, CarouselNext } from '@/components/ui/carousel';
+import { Carousel, CarouselContent, CarouselItem } from '@/components/ui/carousel'; // Removed CarouselPrevious, CarouselNext
+import Autoplay from "embla-carousel-autoplay"; // Added Autoplay plugin
 import { Download, Briefcase, GraduationCap, Star, FileBadge2, HeartHandshake, Users, Award, BookOpen, Activity, Palette, ExternalLink } from 'lucide-react';
 
 const workExperience = [
@@ -445,6 +446,13 @@ export default function ResumeSection() {
                 align: "start",
                 loop: true,
               }}
+              plugins={[
+                Autoplay({
+                  delay: 4000,
+                  stopOnInteraction: false,
+                  stopOnMouseEnter: true,
+                }),
+              ]}
               className="w-full"
             >
               <CarouselContent>
@@ -473,8 +481,7 @@ export default function ResumeSection() {
                   </CarouselItem>
                 ))}
               </CarouselContent>
-              <CarouselPrevious />
-              <CarouselNext />
+              {/* CarouselPrevious and CarouselNext removed */}
             </Carousel>
             <div className="text-center mt-10">
               <Button asChild size="lg" variant="outline" className="border-primary text-primary hover:bg-primary/10">
@@ -491,4 +498,3 @@ export default function ResumeSection() {
     </section>
   );
 }
-

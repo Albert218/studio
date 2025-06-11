@@ -2,7 +2,7 @@
 "use client"
 
 import * as React from "react"
-import useEmblaCarousel from "embla-carousel-react"; // Changed: Direct import
+import useEmblaCarousel, { type EmblaOptionsType, type EmblaPluginType } from "embla-carousel-react";
 import { ArrowLeft, ArrowRight } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { cn } from "@/lib/utils"
@@ -13,6 +13,7 @@ type CarouselContextProps = {
   scrollNext: () => void
   canScrollPrev: boolean
   canScrollNext: boolean
+  api: ReturnType<typeof useEmblaCarousel>[1]
 }
 
 const CarouselContext = React.createContext<CarouselContextProps | null>(null)
@@ -29,8 +30,9 @@ const Carousel = React.forwardRef<
   HTMLDivElement,
   React.HTMLAttributes<HTMLDivElement> & {
     orientation?: "horizontal" | "vertical"
-    opts?: any // Simplified: Embla's options type (kept as any for simplicity of original file)
-    setApi?: (api: any) => void // Simplified: Embla's API type
+    opts?: EmblaOptionsType
+    setApi?: (api: ReturnType<typeof useEmblaCarousel>[1]) => void
+    plugins?: EmblaPluginType[]
   }
 >(
   (
@@ -38,22 +40,24 @@ const Carousel = React.forwardRef<
       orientation = "horizontal",
       opts,
       setApi,
+      plugins,
       className,
       children,
       ...props
     },
     ref
   ) => {
-    const [emblaRef, emblaApi] = useEmblaCarousel( // Changed: Direct usage and applying orientation
+    const [emblaRef, emblaApi] = useEmblaCarousel(
       {
         ...opts,
         axis: orientation === "horizontal" ? "x" : "y",
-      }
+      },
+      plugins
     );
     const [canScrollPrev, setCanScrollPrev] = React.useState(false)
     const [canScrollNext, setCanScrollNext] = React.useState(false)
 
-    const onSelect = React.useCallback((api: any) => {
+    const onSelect = React.useCallback((api: ReturnType<typeof useEmblaCarousel>[1]) => {
       if (!api) return
       setCanScrollPrev(api.canScrollPrev())
       setCanScrollNext(api.canScrollNext())
@@ -74,7 +78,6 @@ const Carousel = React.forwardRef<
       emblaApi.on("select", onSelect)
       if (setApi) setApi(emblaApi)
       return () => {
-        // Check if emblaApi has 'off' method before calling
         if (emblaApi && typeof emblaApi.off === 'function') {
           emblaApi.off("select", onSelect)
           emblaApi.off("reInit", onSelect)
@@ -90,6 +93,7 @@ const Carousel = React.forwardRef<
           scrollNext,
           canScrollPrev,
           canScrollNext,
+          api: emblaApi,
         }}
       >
         <div
@@ -222,15 +226,7 @@ export {
   CarouselItem,
   CarouselPrevious,
   CarouselNext,
-  type CarouselApi,
-}
-
-// Minimal types for Embla Carousel to avoid full dependency install for prototyper
-type CarouselApi = {
-  scrollPrev: () => void
-  scrollNext: () => void
-  canScrollPrev: () => boolean
-  canScrollNext: () => boolean
-  on: (event: string, callback: (api: any) => void) => void
-  off: (event: string, callback: (api: any) => void) => void
+  type EmblaOptionsType as CarouselOptions, // Exporting options type
+  type EmblaPluginType as CarouselPlugin, // Exporting plugin type
+  type ReturnType<typeof useEmblaCarousel>[1] as CarouselApi, // Exporting API type
 }
