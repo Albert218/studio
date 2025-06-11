@@ -9,6 +9,7 @@ import { Card, CardContent, CardFooter, CardHeader, CardTitle } from '@/componen
 import { Carousel, CarouselContent, CarouselItem } from '@/components/ui/carousel';
 import Autoplay from "embla-carousel-autoplay";
 import { Download, Briefcase, GraduationCap, Star, FileBadge2, HeartHandshake, Users, Award, BookOpen, Activity, Palette, ExternalLink } from 'lucide-react';
+import { useRef } from 'react'; // Import useRef
 
 const workExperience = [
   {
@@ -218,6 +219,14 @@ const sampleDesignsData = [
 
 
 export default function ResumeSection() {
+  const autoplay = useRef(
+    Autoplay({
+      delay: 8000,
+      stopOnInteraction: false,
+      stopOnMouseEnter: true,
+    })
+  );
+
   return (
     <section id="resume" className="py-16 md:py-24 bg-secondary/30">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
@@ -447,13 +456,7 @@ export default function ResumeSection() {
                 align: "start",
                 loop: true,
               }}
-              plugins={[
-                Autoplay({
-                  delay: 8000, // Changed from 4000 to 8000
-                  stopOnInteraction: false,
-                  stopOnMouseEnter: true,
-                }),
-              ]}
+              plugins={[autoplay.current]}
               className="w-full"
             >
               <CarouselContent>
@@ -498,4 +501,3 @@ export default function ResumeSection() {
     </section>
   );
 }
-
