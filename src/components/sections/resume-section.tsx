@@ -187,34 +187,23 @@ const publicationsData = [
 const sampleDesignsData = [
   {
     title: 'Mobile App UI',
-    imageUrl: 'https://placehold.co/400x300.png',
+    imageUrl:'/images/Frame 295.png',
     imageHint: 'mobile app ui',
     description: 'User interface design for a modern mobile application, focusing on intuitive navigation and clean aesthetics.'
   },
   {
     title: 'Branding & Logo',
-    imageUrl: 'https://placehold.co/400x300.png',
+    imageUrl: '/images/LOGO.png',
     imageHint: 'branding logo',
     description: 'Complete branding package and logo design for a startup, aiming for a memorable and impactful visual identity.'
   },
   {
     title: 'Website Design',
-    imageUrl: 'https://placehold.co/400x300.png',
+    imageUrl: '/images/Desktop - 2.jpg',
     imageHint: 'website design',
     description: 'Responsive website design for a corporate client, prioritizing user experience and modern visual appeal.'
   },
-  {
-    title: 'Dashboard UI',
-    imageUrl: 'https://placehold.co/400x300.png',
-    imageHint: 'dashboard ui analytics',
-    description: 'Data visualization dashboard interface designed for clarity and actionable insights at a glance.'
-  },
-  {
-    title: 'Flyer Design',
-    imageUrl: 'https://placehold.co/400x300.png',
-    imageHint: 'flyer design event',
-    description: 'Promotional flyer for an event, crafted to be eye-catching and informative, driving engagement.'
-  },
+  
 ];
 
 

@@ -41,7 +41,7 @@ export default function HeroSection() {
             Essilfie Albert
           </h1>
           <p className="text-xl md:text-2xl font-headline text-foreground/80 mb-6">
-            BSc. Comp Sci & Eng. Student | UI/UX | AI & Robotics
+            BSc. Comp Sci & Eng.| UI/UX | AI & Robotics
           </p>
           <p className="text-lg text-muted-foreground mb-8 max-w-2xl mx-auto">
             I am deeply passionate about leveraging systems engineering,
