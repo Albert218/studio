@@ -13,10 +13,6 @@ export default function Home() {
       <Navbar />
       <main className="flex-grow">
         <HeroSection />
-        <ProjectsSection />
-        <ResumeSection />
-        {/* <ElevatorPitchGenerator /> */} {/* Removed */}
-        <ContactSection />
       </main>
       <Footer />
     </div>
